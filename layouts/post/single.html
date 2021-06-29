@@ -1,7 +1,9 @@
 {{ define "main" }}
     <div class="pl-sm-2">
         <div class="mb-3">
-            <h3 class="mb-0">{{ .Title }}</h3>
+            {{ if .Params.Title }}
+            <h2 class="mb-0">{{ .Title }}</h2>
+            {{ end }}
             {{ if .Params.Subtitle }}
             <h5>{{ .Params.Subtitle }}</h5>
             {{ end }}
@@ -11,5 +13,8 @@
         <article>
             {{ .Content }}
         </article>
+
+        {{ partial "subscribe.html" . }}
+
     </div>
 {{ end }}

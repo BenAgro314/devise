@@ -1,6 +1,12 @@
 {{ define "main" }}
     {{ if .Content }}
-        {{ .Content }}
+        <div class="pl-sm-2">
+            <article>
+                {{ .Content }}
+            </article>
+        </div>
+        {{- partial "category-posts.html" . -}}
+        {{ partial "subscribe.html" . }}
     {{ else }}
         {{- partial "category-posts.html" . -}}
     {{ end }}
